@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // gdc 
+        a = parseInt(prompt("enter num 1"));
+        b = parseInt(prompt("enter num 2"));
+        ans=0;
+        for(i=1 ; (i<=a) && (i<=b) ; i++){
+            if((a%i==0)&&(b%i==0)){
+                ans=i;
+            }
+        }
+        document.write("the gcd is:",ans);
+
+    </script>
+</body>
+</html>

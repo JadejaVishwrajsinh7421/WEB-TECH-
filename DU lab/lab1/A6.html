@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //armstrong number
+      originalNum = num;
+      sum = 0;
+      digitCount = 0;
+
+      while (num != 0) {
+        num /= 10;
+        digitCount++;
+      }
+      num = originalNum;
+
+        
+    while (num != 0) {
+        digit = num % 10;
+        sum += pow(digit, digitCount);
+        num /= 10;
+    
+    }
+        if(sum == originalNum){
+            document.write(originalNum + " is an Armstrong number.");
+        }
+        else{
+            document.write(originalNum + " is not an Armstrong number.");
+        }   
+
+    </script>
+  </body>
+</html>
