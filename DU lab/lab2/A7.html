@@ -9,19 +9,41 @@
     <script>
         a = parseInt(prompt("enter number"));
         arr1 =[" ","one","two","three","four","five","six","seven","eight","nine","ten"]
-        arr2=["eleven","tweleve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"]
-        arr3=[" ","twenty","thirty","fourty","fifty","sixty","seventy","eighty","ninty"]
+        arr2=["eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"]
+        arr3=["","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninty"]
         ans = " ";
 
         if(isNaN(a)){
             document.write("it is invaid num");
         }
-        else if((a<0)&&(a>999)){
+        else if((a<0)||(a>999)){
             document.write("not in range");
         }
-        else{
-            
+        else if(a == 100){
+            ans += 'hundred';
         }
+        else if(a == 10 ){
+             ans = "ten";
+        }
+        else{
+            if(a>=100){
+                ans += arr1[Math.floor(a/100)] + ' hundred' + " " ;
+                a=a%100;
+            }
+            if((a>=20) && (a<100)){
+                ans += arr3[Math.floor(a/10 - 1)] + " ";
+                a=a%10;
+            }
+            if((a>10)&&(a<20)){
+                ans += arr2[a % 10 -1];
+        
+            }
+            if((a % 10 >0 )||  (a == 10)){
+                ans+= arr1[a%10];
+            }
+        }
+        document.write("ans is :"+ ans.trim());
+
     </script>
 </body>
 </html>

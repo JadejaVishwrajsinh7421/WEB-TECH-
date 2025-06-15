@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=a, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+     str = prompt("Enter a string:");
+     f = str.indexOf("a");
+     l = str.lastIndexOf("a");
+
+    if (f !== -1 && l !== -1 && f !== l) {
+      between = str.substring(f + 1, l);
+      document.write("First index of 'a': " + f + "<br>");
+      document.write("Last index of 'a': " + l + "<br>");
+      document.write("The string between first and last 'a': " + between);
+    } else {
+      document.write("The character 'a' was not found twice in the string.");
+    }
+    </script>
+  </body>
+</html>
