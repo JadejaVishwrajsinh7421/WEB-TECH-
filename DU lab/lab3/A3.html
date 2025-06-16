@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // buuble sort in array
+        n = parseInt( prompt("Enter the number of elements in the array:"));
+        arr  = []
+        // document.write(arr[0])
+        // document.write(arr.length)
+
+
+        for(i=0;i<n;i++){
+            arr[i] = parseInt(prompt("enter the value of elements"));
+        }
+
+         document.write("the array:" + arr);
+         
+        for(i=0;i<(n-1);i++){
+            for(j=0;j<(n-i-1);j++){
+                if(arr[j]>arr[j+1]){
+                    temp = arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                }
+            }
+        }
+         document.write("the update array:" + arr);
+    </script>
+</body>
+</html>
