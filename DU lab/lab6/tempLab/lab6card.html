@@ -1,0 +1,66 @@
+!<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Username:-</label>
+    <input type="text" id="name">
+    <button onclick="adddata()" id="addtoedit">Add </button>
+    <table>
+        <thead>    
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tbd"></tbody>
+    </table>
+    <script>
+        editidx=-1;
+        arr=[];
+
+        function adddata(){
+            data = document.getElementById("name").value;
+            if(editidx!=-1){
+                arr[editidx]=data;
+                editidx=-1;
+                document.getElementById("addtoedit").innerHTML="Add"
+            }else{
+                if(data==''){
+                    alert("Enter Valid Data");
+                }else{
+                    arr.push(data);
+                }
+            }
+            document.getElementById("name").value="";
+            addRow();
+        }
+        function addRow(){
+            ref=document.getElementById("tbd");
+            row='';
+            for(i=0;i<arr.length;i++){
+                row+=`<tr>
+                    <td>${i+1}</td>
+                    <td>${arr[i]}</td>
+                    <td><button onclick="editData(${i})">Edit </button> <button onclick="deleteData(${i})">Delete </button></td>
+                </tr>
+                `;
+                ref.innerHTML = row;
+            }
+        }
+        function deleteData(index){
+            arr.splice(index,1);
+            addRow();
+        }
+        function editData(index){
+            editidx=index;
+            document.getElementById("name").value=arr[index];
+            document.getElementById("addtoedit").innerHTML="Edit"
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colorful Calculator</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .calculator-container {
+      max-width: 400px;
+      margin: auto;
+      margin-top: 40px;
+    }
+
+    .theme-light {
+      background-color: #f8f9fa;
+      color: #000;
+    }
+
+    .theme-dark {
+      background-color: #121212;
+      color: #fff;
+    }
+
+    .theme-colorful {
+      background-color: #ffefd5;
+      color: #1f1f1f;
+    }
+
+    .btn-theme {
+      margin-bottom: 15px;
+    }
+
+    input#exp {
+      height: 60px;
+      font-size: 24px;
+    }
+
+    button.btn {
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body class="theme-light">
+
+  <div class="calculator-container p-3 rounded shadow" id="calculator">
+    <div class="mb-3 text-center">
+      <select class="form-select btn-theme" onchange="changeTheme(this.value)">
+        <option value="light">Light Theme</option>
+        <option value="dark">Dark Theme</option>
+        <option value="colorful">Colorful Theme</option>
+      </select>
+    </div>
+
+    <table class="table table-bordered text-center">
+      <tr>
+        <td colspan="4"><input type="text" id="exp" class="form-control" /></td>
+      </tr>
+      <tr>
+        <td class="table-secondary"><button class="btn w-100" onclick="clearr()">AC</button></td>
+        <td class="table-secondary"><button class="btn w-100" onclick="back()">←</button></td>
+        <td class="table-secondary"><button class="btn w-100" onclick="normal('%')">%</button></td>
+        <td class="table-secondary"><button class="btn w-100" onclick="normal('/')">/</button></td>
+      </tr>
+      <tr>
+        <td class="table-secondary"><button class="btn w-100" onclick="normal('7')">7</button></td>
+        <td class="table-secondary"><button class="btn w-100" onclick="normal('8')">8</button></td>
+        <td class="table-secondary"><button class="btn w-100" onclick="normal('9')">9</button></td>
+        <td class="table-secondary"><button class="btn w-100" onclick="normal('*')">*</button></td>
+      </tr>
+      <tr>
+        <td class="table-secondary"><button class="btn w-100" onclick="normal('4')">4</button></td>
+        <td class="table-secondary"><button class="btn w-100" onclick="normal('5')">5</button></td>
+        <td class="table-secondary"><button class="btn w-100" onclick="normal('6')">6</button></td>
+        <td class="table-secondary"><button class="btn w-100" onclick="normal('-')">-</button></td>
+      </tr>
+      <tr>
+        <td class="table-secondary"><button class="btn w-100" onclick="normal('1')">1</button></td>
+        <td class="table-secondary"><button class="btn w-100" onclick="normal('2')">2</button></td>
+        <td class="table-secondary"><button class="btn w-100" onclick="normal('3')">3</button></td>
+        <td class="table-secondary"><button class="btn w-100" onclick="normal('+')">+</button></td>
+      </tr>
+      <tr>
+        <td class="table-secondary"><button class="btn w-100" onclick="normal('00')">00</button></td>
+        <td class="table-secondary"><button class="btn w-100" onclick="normal('0')">0</button></td>
+        <td class="table-secondary"><button class="btn w-100" onclick="normal('.')">.</button></td>
+        <td class="table-secondary"><button class="btn w-100" onclick="ans()">=</button></td>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    function normal(num) {
+      document.getElementById("exp").value += num;
+    }
+
+    function clearr() {
+      document.getElementById("exp").value = "";
+    }
+
+    function back() {
+      let a = document.getElementById("exp").value;
+      document.getElementById("exp").value = a.slice(0, -1);
+    }
+
+    function ans() {
+      try {
+        document.getElementById("exp").value = eval(document.getElementById("exp").value);
+      } catch (err) {
+        alert("Invalid Expression");
+      }
+    }
+
+    function changeTheme(theme) {
+      const body = document.body;
+      body.classList.remove("theme-light", "theme-dark", "theme-colorful");
+
+      if (theme === "light") body.classList.add("theme-light");
+      else if (theme === "dark") body.classList.add("theme-dark");
+      else if (theme === "colorful") body.classList.add("theme-colorful");
+    }
+  </script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  ></script>
+</body>
+</html>

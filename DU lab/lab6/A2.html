@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- . WAP to recognize which mouse event is ƒired. (A) -->
+
+    <button id="click">CLick</button>
+
+    <div id="get"></div>
+
+    <script>
+      temp = document.getElementById("get");
+      document.getElementById("click").addEventListener("click", () => {
+        temp.innerHTML = "Click mouse";
+      });
+      document.getElementById("click").addEventListener("dblclick", () => {
+        temp.innerHTML = " double Click mouse";
+      });
+      document.getElementById("click").addEventListener("mousedown", () => {
+        temp.innerHTML = "mousedown";
+      });
+      document.getElementById("click").addEventListener("mouseout", () => {
+        temp.innerHTML = "mouseout";
+      });
+      document.getElementById("click").addEventListener("mousemover", () => {
+        temp.innerHTML = "mouseover";
+      });
+      document.getElementById("click").addEventListener("mouseup", () => {
+        temp.innerHTML = "mouseup";
+      });
+
+      document.getElementById("click").addEventListener("mouseover", () => {
+        temp.innerHTML = "Click mouse";
+      });
+    </script>
+  </body>
+</html>

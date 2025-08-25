@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <img
+      src="https://images.ctfassets.net/hrltx12pl8hq/5596z2BCR9KmT1KeRBrOQa/4070fd4e2f1a13f71c2c46afeb18e41c/shutterstock_451077043-hero1.jpg"
+      alt="not found"
+      id="myEle"
+      height="100px"
+      weight="500px"
+    />
+    <button id="myBtn1">slide down</button>
+    <button id="myBtn2">slide up</button>
+    <button id="myBtn3">slide toggle</button>
+    <script>
+      $("#myBtn1").click(function () {
+        $("#myEle").slideDown();
+      });
+
+      $("#myBtn2").click(function () {
+        $("#myEle").slideUp();
+      });
+
+      $("#myBtn3").click(function () {
+        $("#myEle").slideToggle();
+      });
+    </script>
+  </body>
+</html>

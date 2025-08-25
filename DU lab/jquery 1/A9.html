@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+    <label for="ele">Enter Enrollment number"</label>
+    <input type="text" class="myEle" />
+    <span id="valid"></span>
+
+    <script>
+        $("input").blur(function(){
+            
+            data=$('input').val();
+            if(data.length == 11){
+                $('input').css({
+                    backgroundColor:"green",
+                    color:"white"
+                })
+          
+                $('#valid').html('valid input')
+            }
+            else{
+                 $('input').css({
+                    backgroundColor:"red",
+                    color:"white"
+                })
+          
+                $('#valid').html('Invalid input')
+            }
+        })
+    </script>
+</body>
+</html>

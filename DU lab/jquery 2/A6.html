@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+        #myEle{
+            border-color: rgb(0, 0, 0);
+            border: 4px;
+        }
+    </style>
+</head>
+<body>
+     <!-- write a jQuery program to append new list item with "Hello World" to existing unordered list when clicked on button. (A) -->
+        <label for="">enter name</label>
+        <input type="text" class="name" />
+        <br>
+        <label for="">enter roll</label>
+        <input type="text" class ="roll">
+        <br>
+        <button id="newRowBtn">Click for new row </button>
+     <table id ="myEle" border="solid black">
+        <thead>
+            <td>name</td>
+            <td>roll number</td>
+        </thead>
+        <tbody>
+            <tr>
+                  <td>vishwraj</td>
+                  <td>127</td>
+            </tr>
+        </tbody>
+     </table>
+
+       <script>
+        $("#newRowBtn").click(function (){
+            $('#myEle').append("<tr><td>" +$('.name').val()+"</td><td>"+$('.roll').val()+"</td></tr>")
+            $('input').val('')
+        })
+
+       
+
+        // $("#newRowBtn").click(function (){
+        //     $("#myEle").append("<tr></tr>")
+        //      $('input').val('')
+        // })
+        
+        
+        
+       </script>
+</body>
+</html>

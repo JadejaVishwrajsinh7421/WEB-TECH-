@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuisine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url('https://imgs.search.brave.com/lyg_sT7uOaOyhh4hdWFvnoKMBd5oBGIFvlNiOwQMDRw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9oaW5kdS1iYWNr/Z3JvdW5kLWluZGlh/bi1iYWNrZ3JvdW5k/LXRoZW1lXzEyNzk1/MDgtMjM0MjkuanBn/P3NlbXQ9YWlzX2h5/YnJpZA');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+            color: #173353;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+            height: 325%;
+            width: 100%;
+            z-index: -1;
+        }
+
+        header {
+            background-color: #361902bf;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            transition: transform 1s ease-in-out;
+        }
+
+        header h1 {
+            margin: 0;
+            background: linear-gradient(90deg, orange, white, green);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            opacity: 0;
+            transform: translateX(-100%);
+            animation: slideIn 2s forwards;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .sidebar {
+            width: 50px;
+            background: linear-gradient(#4E6980, #F6F7EB);
+            color: white;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transition: all 0.3s ease;
+            box-shadow: 2px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar:hover {
+            width: 220px;
+        }
+
+        .sidebar .sidebar-header {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar .sidebar-header:hover {
+            transform: scale(1.2);
+            color: #e9d8a6;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, pointer-events 0s 0.3s;
+        }
+
+        .sidebar:hover ul {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .sidebar button {
+            background-color: #005f73;
+            border: none;
+            color: white;
+            padding: 12px 18px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar button:hover {
+            background-color: #e9d8a6;
+            transform: translateX(5px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar button a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        .main-content {
+            margin-left: 240px;
+            padding: 20px;
+            font-family: sans-serif;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: 200px;
+            transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 40%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        img:hover {
+            transform: scale(1.1);
+            opacity: 1;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        footer {
+            background-color: #ae2012;
+            color: white;
+            text-align: center;
+            margin-top: 10px auto;
+        }
+
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Media Query for smaller screens */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                box-shadow: none;
+            }
+
+            .sidebar ul {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Popular Indian Dishes</h1>
+    </header>
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <span>...</span>
+        </div>
+        <ul>
+            <li><button><a href="home.html">Home</a></button></li>
+            <li><button><a href="culture.html">Culture</a></button></li>
+            <li><button><a href="landmark.html">Landmark</a></button></li>
+            <li><button><a href="cuisine.html">Cuisine</a></button></li>
+            <li><button><a href="contactus.html">Contact Us</a></button></li>
+        </ul>
+    </div>
+
+    <div class="main-content container mt-5">
+        <p class="lead">Explore the flavors of India through its diverse and rich culinary traditions!</p>
+
+        <audio controls loop muted>
+            <source src="titanium.mp3" />
+        </audio>
+
+        <div class="row mt-4">
+            <div class="col-lg-6">
+                <h2 style="color: #fc0808d8;"><u>North Indian Cuisine</u></h2>
+                <p>North India is known for its rich, aromatic, and flavorful dishes often cooked with ghee and spices:</p>
+                <ul>
+                    <li><b style="color: #724e0b;">Biryani:</b> A fragrant rice dish made with aromatic spices and meat or vegetables.</li>
+                    <li><b style="color: #724e0b;">Chicken:</b> A creamy, tomato-based curry that's a favorite worldwide.</li>
+                    <li><b style="color: #724e0b;">Paneer Tikka:</b> Marinated paneer cubes grilled to perfection.</li>
+                </ul>
+                <img src="./images/biryani.jpg" alt="Aromatic and flavorful Biryani">
+            </div>
+
+            <div class="col-lg-6">
+                <h2 style="color: #fc0808d8;"><u>South Indian Cuisine</u></h2>
+                <p>South India offers a wide array of dishes with a perfect blend of spices and tangy flavors:</p>
+                <ul>
+                    <li><b style="color: #724e0b;">Masala Dosa:</b> A crispy rice crepe stuffed with spicy potato filling.</li>
+                    <li><b style="color: #724e0b;">Idli and Sambar:</b> Soft rice cakes served with a tangy lentil-based vegetable stew.</li>
+                    <li><b style="color: #724e0b;">Chettinad Chicken:</b> A fiery, flavorful chicken dish from Tamil Nadu.</li>
+                </ul>
+                <img src="./images/dosa.jpg" alt="South Indian favorite: Masala Dosa">
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12">
+                <h2 style="color: #fc0808d8;"><u>Sweet Delights</u></h2>
+                <p>No Indian meal is complete without indulging in some mouth-watering desserts:</p>
+                <ul>
+                    <li><b style="color: #724e0b;">Gulab Jamun:</b> Fried milk solids soaked in sugar syrup.</li>
+                    <li><b style="color: #724e0b;">Rasgulla:</b> Soft and spongy cheese balls in light sugar syrup.</li>
+                    <li><b style="color: #724e0b;">Payasam:</b> A South Indian dessert made of milk, rice, and jaggery.</li>
+                </ul>
+                <img src="./images/gulab_jamun.jpg" alt="Irresistible Gulab Jamun">
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2025 Incredible India Project. All rights reserved.
+        <p>
+            Contact us at <a href="mailto:info@incredibleindia.com">info@incredibleindia.com</a>
+        </p>
+        <p>
+            Follow us on:
+            <a href="https://www.facebook.com/">Facebook</a> |
+            <a href="https://x.com/?lang=en-in&mx=2" target="_blank">Twitter</a>
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

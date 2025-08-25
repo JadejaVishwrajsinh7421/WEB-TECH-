@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // q1  age lie between 18 and 20
+      let age = parseInt(prompt("Enter your age:"));
+      if (age >= 18 && age <= 20) {
+        alert("You are eligible to vote.");
+      } else {
+        alert("You are not eligible to vote.");
+      }
+
+      //q2 use of switch case
+      const day = parseInt(prompt("Enter a number between 1 and 7:"));
+      switch (day) {
+        case 1:
+          alert("Monday");
+          break;
+        case 2:
+          alert("Tuesday");
+          break;
+        case 3:
+          alert("Wednesday");
+          break;
+        case 4:
+          alert("Thursday");
+          break;
+        case 5:
+          alert("Friday");
+          break;
+        case 6:
+          alert("Saturday");
+          break;
+        case 7:
+          alert("Sunday");
+          break;
+        default:
+          alert("Invalid input! Please enter a number between 1 and 7.");
+      }
+
+      //q3
+      // divide by 2 and 3
+      let num = parseInt(prompt("Enter a number:"));
+      if (num % 2 === 0 && num % 3 === 0) {
+        console.log("the num is divisible by 2 and 3");
+      } else {
+        console.log("the num is not divisible by 2 and 3");
+      }
+
+      // q4
+      //   divide by 2 or 3
+      let num1 = parseInt(prompt("Enter a number:"));
+      if (num1 % 2 === 0 || num1 % 3 === 0) {
+        console.log("the num is divisible by 2 or 3");
+      } else {
+        console.log("the num is not divisible by 2 or 3");
+      }
+
+    //   q5
+    // ternary operator
+        let a = parseInt(prompt("hi,what is your age?"));
+      console.log("you can",a<18? "not drive ":"drive")
+    </script>
+  </body>
+</html>

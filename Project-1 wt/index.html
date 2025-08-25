@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Multi-Class Attendance Tracker</title>
+    <link rel="stylesheet" href="students.css" />
+  </head>
+  <body>
+    <h1>Class Attendance Tracker</h1>
+
+    <div class="class-buttons">
+      <button id="classA-btn" class="active" onclick="switchClass('A')">Class 3A</button>
+      <button id="classB-btn" onclick="switchClass('B')">Class 3B</button>
+      <!-- <button class="btn btn-reset" onclick="toggleAutoAttendance()">Auto Mark Absent</button> -->
+
+    </div>
+
+    <div class="action-buttons">
+      <button class="btn btn-present" onclick="markAllPresent()">
+        Mark All Present
+      </button>
+      <button class="btn btn-absent" onclick="markAllAbsent()">
+        Mark All Absent
+      </button>
+    </div>
+
+    <div class="table-container">
+      <table id="studentTable">
+        <thead>
+          <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="studentBody"></tbody>
+      </table>
+    </div>
+
+    <div class="summary">
+      <p><strong>Total Present:</strong> <span id="presentCount">0</span></p>
+      <p><strong>Total Absent:</strong> <span id="absentCount">0</span></p>
+    </div>
+
+    <div class="absent-rolls">
+      <p><strong>Absent Roll Numbers:</strong></p>
+      <div
+        id="absentRolls"
+        style="background: #fff; padding: 10px; border: 1px solid #ccc"
+      ></div>
+    </div>
+
+    <button class="btn btn-reset" onclick="resetAttendance()">
+      Reset Attendance
+    </button>
+    <!-- <script src="AutoAbsent.js"></script> -->
+    <script src="name.js"></script>
+    <script src="studentsjs.js"></script>
+  </body>
+</html>

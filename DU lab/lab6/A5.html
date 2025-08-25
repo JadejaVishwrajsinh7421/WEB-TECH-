@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- WAP to demonstrate change in properties of HTML element using JavaScript.  -->
+
+    <p id="text">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam, in
+      earum recusandae non perferendis reprehenderit nesciunt quam ad hic,
+      asperiores mollitia iusto similique harum enim quos optio alias dicta
+      corrupti.
+    </p>
+    <button id="bgChange" onclick="bgChange()">
+      Click to change background
+    </button>
+    <button onclick="increaseWidth()">+</button>
+	<button onclick="decreaseWidth()">-</button>
+    <img src="CEAVB.jpg" alt="photo" id="myImg" />
+    <script>
+        imgWidth = 100;
+		imgLeft = 300;
+		leftrightInt = 0;
+        function increaseWidth(){
+			imgWidth += 10;
+			imgRef = document.getElementById("myImg");
+			imgRef.style.width = imgWidth+"px";
+		}
+		function decreaseWidth(){
+			imgWidth -= 10;
+			imgRef = document.getElementById("myImg");
+			imgRef.style.width = imgWidth+"px";
+		}
+      function bgChange() {
+        myRef = document.getElementById("text");
+        myRef.style.backgroundColor = "blue";
+        myRef.style.color = "red";
+       
+
+      }
+    </script>
+  </body>
+</html>

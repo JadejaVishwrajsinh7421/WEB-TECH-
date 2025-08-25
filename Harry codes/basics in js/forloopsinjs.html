@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- general types of loop -->
+     <!-- 1.for loop
+     2. while loop
+     3. do while loop
+     4. for in loop
+     5. for of loop -->
+
+     <script>
+        // for loop
+        for (let i = 0; i < 5; i++) {
+            console.log("This is for loop iteration number: " + i);
+        }
+
+        // while loop
+        let j = 0;
+        while (j < 5) {
+            console.log("This is while loop iteration number: " + j);
+            j++;
+        }
+
+        // do while loop
+        let k = 0;
+        do {
+            console.log("This is do while loop iteration number: " + k);
+            k++;
+        } while (k < 5);
+
+        // for in loop (for objects)
+        const obj = { a: 1, b: 2, c: 3 };
+        for (let a  in obj) {
+            console.log("marks of"+a+"are:"+obj[a]);
+        }
+
+        // for of loop (for arrays)
+        const arr = [10, 20, 30];
+        for (let value of arr) {
+            console.log("Array value: " + value);
+        }
+     </script>
+</body>
+</html>

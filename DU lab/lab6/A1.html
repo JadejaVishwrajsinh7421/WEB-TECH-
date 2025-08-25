@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        p{
+            background-color:aqua;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- WAP to change background color on click of button.  -->
+    <p id="text">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam, in
+      earum recusandae non perferendis reprehenderit nesciunt quam ad hic,
+      asperiores mollitia iusto similique harum enim quos optio alias dicta
+      corrupti.
+    </p>
+    <button id="bgChange" onclick="bgChange()">Click to change background</button>
+
+    <script>
+        function bgChange(){
+            temp = document.getElementById("text")
+            // temp.style.backgroundColor = "red";
+            temp.style.color ="parseInt(Math.random()*255)+","+parseInt(Math.random()*255)+","+parseInt(Math.random()*255)";
+            temp.style.color="white"
+        }
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+        .main {
+            width: 100vw;
+        }
+
+        .nav {
+            height: 60px;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            position: sticky;
+            top: 0px;
+            z-index: 2;
+        }
+
+        .left-nav {
+            width: 55%;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .left-nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px 15px;
+            margin-right: 30px;
+            font-weight: 600;
+            transition: all 0.6s ease;
+            padding: 7px;
+        }
+
+
+        .left-nav a:hover {
+            /* color: rgba(255, 255, 255, 0.6); */
+            background-color: #484848b2;
+            border-radius: 20px;
+
+        }
+
+        .left-nav a:nth-child(4) {
+            background-color: #4848489b;
+            border-radius: 20px;
+            color: lightyellow;
+
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            width: 1.5%;
+            font-weight: 700;
+            /* display: flex;
+            justify-content: start;    */
+            text-align: start;
+            margin: 10px;
+            font-size: large;
+        }
+
+        .right-nav .profile {
+            /* width: 26.5%; */
+            display: inline-block;
+            /* display: flex; */
+            /* justify-content: end; */
+            text-align: end;
+            margin: 10px;
+
+            scale: 1.9;
+        }
+
+        .right-nav a {
+            text-decoration: none;
+            color: white;
+            transition: all 0.6s ease;
+            margin-right: 10px;
+            padding: 10px;
+        }
+
+        .right-nav a:hover {
+            background-color: #484848b2;
+            border-radius: 20px;
+
+        }
+
+        .profile {
+            display: inline-block;
+            margin-right: 30px;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        .mid {
+            width: 100%;
+            display: flex;
+            /* display: block; */
+            justify-content: center;
+            background-color: black;
+            /* padding-bottom: 50px; */
+        }
+
+        .mid h1 {
+            position: absolute;
+            bottom: 0px;
+            right: 40px;
+            color: white;
+            font-size: 54px;
+            font-weight: 700;
+            z-index: 1;
+
+        }
+
+        .mid img {
+            /* height: 500px; */
+            width: 100%;
+            opacity: 0.7;
+        }
+
+
+        /* .card-body p{
+            color: #ffffff;
+
+        } */
+
+        .row2 {
+            height: 250px;
+            width: 70%;
+            margin-left: 60px;
+            margin-top: 40px;
+            /* margin-right: 200px; */
+        }
+
+
+        h1,
+        h2 {
+            font-weight: 700;
+            /* color: rgba(0, 0, 139, 0.67); */
+            font-size: 38px;
+            word-spacing: 2px;
+            line-height: 70px;
+
+        }
+
+        p {
+            word-spacing: 2px;
+            line-height: 35px;
+        }
+
+         .mid2 {
+            width: 100%;
+            display: flex;
+            /* display: block; */
+            justify-content: center;
+            background-color: black;
+        }
+
+        .left {
+            width: 30%;
+            /* display: inline-block; */
+            /* display: flex; */
+            /* align-items: center; */
+            margin-top: 50px;
+
+        }
+
+        .right {
+            margin-top: 40px;
+            width: 50%;
+            margin-left: 20px;
+            /* display: inline-block; */
+            text-align: left;
+            /* display: flex; */
+            /* justify-content: end; */
+            display: flex;
+            justify-content: end;
+            margin-bottom: 10px;
+            margin-top: 50px;
+        }
+
+        .right img {
+            /* display: inline-block; */
+            border-radius: 15px;
+            width: 620px;
+            height: 560px;
+
+        }
+
+        h1 {
+            font-weight: 700;
+            color: #ffffff;
+            font-size: 49px;
+            word-spacing: 2px;
+            line-height: 70px;
+        }
+
+        .mid2 p {
+            line-height: 46px;
+            color: #ffffff;
+        }
+
+
+        /* Footers */
+        .footer {
+            background-color: #000;
+            border-top: 1px solid #222;
+            padding: 40px 60px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-content {
+            flex: 1 1 200px;
+            margin: 30px 0px;
+        }
+
+        .footer-content h4 {
+            margin-bottom: 14px;
+            color: #fff;
+        }
+
+        .footer-content a {
+            display: block;
+            margin: 8px 0;
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background-color: #000;
+        }
+
+        .social-icons img,
+        .store-buttons img {
+            height: 30px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .bottom-bar {
+            background: #000;
+            text-align: center;
+            padding: 10px;
+            font-size: 13px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="nav">
+            <a href="home2.html" class="logo">RideLoop</a>
+            <div class="left-nav">
+                <a href="home2.html">Ride</a>
+                <a href="drive.html">Drive</a>
+                <a href="bussiness.html">Business</a>
+                <a href="aboutus.html">About Us</a>
+            </div>
+            <div class="right-nav">
+                <a href="">Help</a>
+
+                <div class="profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mid">
+
+
+            <h1>About Us</h1>
+
+            <img src="i7_aboutUs.webp" alt="try again..">
+
+
+            <!-- Get Started button -->
+
+
+
+
+        </div>
+        <div class="row2">
+            <h2>We reimagine the way the world moves for the better</h2>
+            Movement is what we power. It's our lifeblood. It runs through our veins. It's what gets us out of bed each
+            morning. It pushes us to constantly reimagine how we can move better. For you. For all the places you want
+            to go. For all the things you want to get. For all the ways you want to earn. Across the entire world. In
+            real time. At the incredible speed of now.
+
+
+        </div>
+
+        <div class="mid2">
+            <div class="left">
+                <h1>About RideLoop</h1>
+                <p>CarpoolConnect is a cutting-edge carpooling platform that aims to make your daily commute more affordable and eco-friendly. We are dedicated to connecting drivers and riders for a seamless and convenient travel experience.
+
+Our mission is to reduce traffic congestion and carbon emissions while fostering a sense of community through shared rides. Whether you're heading to work, college, or an event, CarpoolConnect makes ride-sharing simple and safe.
+
+Join our community today and take the first step toward smarter commuting!.</p>
+
+
+              
+            </div>
+            <div class="right">
+                <img src="i9_AboutUs.webp" alt="Try Again..">
+            </div>
+        </div>
+
+        <!-- Footers -->
+
+        <div class="footer">
+
+            <div class="footer-content">
+                <h4>Company</h4>
+                <a href="#">About us</a>
+                <a href="#">Our offerings</a>
+                <a href="#">Newsroom</a>
+                <a href="#">Careers</a>
+            </div>
+
+            <div class="footer-content">
+                <h4>Products</h4>
+                <a href="#">Ride</a>
+                <a href="#">Drive</a>
+                <a href="#">Corporate</a>
+                <a href="#">Gift Cards</a>
+            </div>
+
+            <div class="footer-content">
+                <h4>Global Citizenship</h4>
+                <a href="#">Safety</a>
+                <a href="#">Sustainability</a>
+            </div>
+
+            <div class="footer-content">
+                <h4>Travel</h4>
+                <a href="#">Reserve</a>
+                <a href="#">Airports</a>
+                <a href="#">Cities</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="social-icons">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook" />
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/twitterx.png" alt="X" />
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="YouTube" />
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn" />
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram" />
+            </div>
+            <div class="store-buttons">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                    alt="Google Play" height="40" />
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                    alt="App Store" height="40" />
+            </div>
+        </div>
+        <div class="bottom-bar">
+            © 2025 CarpoolConnect Technologies Inc.
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

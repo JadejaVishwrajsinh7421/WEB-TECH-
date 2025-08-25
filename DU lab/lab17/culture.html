@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Culture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url('https://imgs.search.brave.com/lyg_sT7uOaOyhh4hdWFvnoKMBd5oBGIFvlNiOwQMDRw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9oaW5kdS1iYWNr/Z3JvdW5kLWluZGlh/bi1iYWNrZ3JvdW5k/LXRoZW1lXzEyNzk1/MDgtMjM0MjkuanBn/P3NlbXQ9YWlzX2h5/YnJpZA');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+            color: #173353;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+            height: 325%;
+            width: 100%;
+            z-index: -1;
+        }
+
+        header {
+            background-color: #361902bf;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            transition: transform 1s ease-in-out;
+        }
+
+        header h1 {
+            margin: 0;
+            background: linear-gradient(90deg, orange, white, green);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            opacity: 0;
+            transform: translateX(-100%);
+            animation: slideIn 2s forwards;
+            font-size: 3rem; /* Adjust font size */
+            text-align: center; /* Center the text */
+            font-weight: bold; /* Make the text bold */
+        }
+
+        /* Keyframe for sliding in */
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Keyframe for shake animation */
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-10px);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+            75% {
+                transform: translateX(-10px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Optional: Hover effect to make the title shake */
+        header h1:hover {
+            animation: shake 0.5s ease;
+        }
+
+
+        /* h1:hover {
+            transform: rotate(360deg) scale(1.2);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            background-color: #cdb4db;
+            color: black;
+        } */
+
+        .sidebar {
+            width: 50px;
+            background: linear-gradient(#4E6980, #F6F7EB);
+            color: white;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transition: all 0.3s ease;
+            box-shadow: 2px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar:hover {
+            width: 220px;
+        }
+
+        .sidebar .sidebar-header {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar .sidebar-header:hover {
+            transform: scale(1.2);
+            color: #e9d8a6;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, pointer-events 0s 0.3s;
+        }
+
+        .sidebar:hover ul {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .sidebar button {
+            background-color: #005f73;
+            border: none;
+            color: white;
+            padding: 12px 18px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar button:hover {
+            background-color: #e9d8a6;
+            transform: translateX(5px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .main-content {
+            margin-left: 230px;
+            padding: 20px;
+            flex: 1;
+        }
+
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1b170e;
+            color: #fff;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        td {
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+            transition: background-color 0.3s ease;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: 200px;
+            transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 40%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        img:hover {
+            transform: scale(1.1);
+            opacity: 1;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        footer {
+            background-color: #ae2012;
+            color: white;
+            text-align: center;
+            margin-top: 10px auto;
+        }
+
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                box-shadow: none;
+            }
+
+            .sidebar ul {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="container mt-5">
+        <h1 class="animated-header">Indian Culture</h1>
+    </header>
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <span>...</span>
+        </div>
+        <ul>
+            <li><button><a href="home.html">Home</a></button></li>
+            <li><button><a href="culture.html">Culture</a></button></li>
+            <li><button><a href="landmark.html">Landmark</a></button></li>
+            <li><button><a href="cuisine.html">Cuisine</a></button></li>
+            <li><button><a href="contactus.html">Contact Us</a></button></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <p>Discover the rich and diverse culture of India, a land of unity in diversity.</p>
+
+        <h2 style="color: #fc0808d8;"><u>Festivals</u></h2>
+
+        <p>India celebrates a variety of festivals that reflect its rich cultural heritage and religious diversity:</p>
+
+        <ul>
+            <li><b style="color: #724e0b;">Diwali:</b> Festival of Lights, symbolizing the victory of light over
+                darkness.</li>
+            <li><b style="color: #724e0b;">Holi:</b> Festival of Colors, celebrating love and the arrival of spring.
+            </li>
+            <li><b style="color: #724e0b;">Eid:</b> Festival of Harmony, marked by prayers, feasts, and charity.</li>
+            <li><b style="color: #724e0b;">Christmas:</b> Festival of Joy, celebrating the birth of Jesus Christ.</li>
+            <li type="none"><br /></li>
+            <li type="none">
+                <img src="./images/diwali.jpg" alt="image couldn't load" />
+            </li>
+            <li type="none">Diwali The Festival of Lights</li>
+        </ul>
+
+        <h2 style="color: #fc0808d8;"><u>Languages</u></h2>
+
+        <p>India is a linguistic treasure trove with 22 officially recognized languages and thousands of regional
+            dialects:</p>
+
+        <h3 style="color: #724e0b;">Popular Languages in India</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Language</th>
+                    <th>Region</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hindi</td>
+                    <td>North India</td>
+                </tr>
+                <tr>
+                    <td>Bengali</td>
+                    <td>West Bengal</td>
+                </tr>
+                <tr>
+                    <td>Tamil</td>
+                    <td>Tamil Nadu</td>
+                </tr>
+                <tr>
+                    <td>Telugu</td>
+                    <td>Andhra Pradesh</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <b>&#129170;Fun Fact</b>
+
+        <h2 style="color: #fc0808d8;"><u>Traditional Attire</u></h2>
+        <details>
+            <p>Indian traditional clothing varies by region, showcasing its cultural diversity:</p>
+            <ul>
+                <li><b style="color: #724e0b;">Saree:</b> Elegant drape worn by women across India.</li>
+                <li><b style="color: #724e0b;">Kurta-Pajama:</b> Comfortable attire for men, popular in the north.</li>
+                <li><b style="color: #724e0b;">Lehenga:</b> A festive outfit for women, especially in weddings.</li>
+                <li type="none"><br /></li>
+                <li type="none">
+                    <img src="./images/saree.jpg" alt="image couldn't load" />
+                </li>
+                <li type="none">Traditional Saree - Grace and Elegance</li>
+            </ul>
+        </details>
+    </div>
+
+    <footer>
+        &copy; 2025 Incredible India Project. All rights reserved.
+        <p>Contact us at <a href="mailto:info@incredibleindia.com">info@incredibleindia.com</a></p>
+        <p>
+            Follow us on:
+            <a href="https://www.facebook.com/">Facebook</a> |
+            <a href="https://x.com/?lang=en-in&mx=2" target="_blank">Twitter</a>
+        </p>
+    </footer>
+</body>
+
+</html>

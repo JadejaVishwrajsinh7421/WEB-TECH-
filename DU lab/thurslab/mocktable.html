@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 100px;
+      }
+      table {
+        border: 2px;
+        border-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          name
+        </tr>
+        <tr>
+          roll
+        </tr>
+        <tr>
+          image
+        </tr>
+      </thead>
+      <tbody id="abc"></tbody>
+    </table>
+    <script>
+      temp = "";
+      // const xhttp = new XMLHttpRequest()
+      // xhttp.open("GET","https://6881bd0166a7eb81224bb905.mockapi.io/student",true)
+      // xhttp.send();
+      // xhttp.onload = function(){
+      //   if(xhttp.status == 200){
+      //        data = JSON.parse(this.responseText);
+      //     data.map((stu)=>{
+      //         temp +=`<tr>
+      //             <td> ${stu.name} </td>
+      //             <td> ${stu.roll} </td>
+      //             <td><img src='${stu.image}'></td>
+      //             </tr>`
+      //        })
+      //     document.getElementById('abc').innerHTML=temp
+
+      //   }
+      //   else{
+      //       alert("data not found");
+      //   }
+      // }
+
+      const xhttp = new XMLHttpRequest();
+
+      xhttp.open(
+        "POST",
+        "https://6881bd0166a7eb81224bb905.mockapi.io/student",
+        true
+      );
+      xhttp.onload = function () {
+        newdata = JSON.stringify({
+          name: "rambha",
+          roll: "123",
+          image:
+            "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-169994-674010.jpg&fm=jpg",
+        });
+
+        xhttp.setRequestHeader("Content-Type", "application/json");
+
+        xhttp.send(newdata);
+      };
+    </script>
+  </body>
+</html>

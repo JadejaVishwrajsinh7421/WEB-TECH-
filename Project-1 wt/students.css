@@ -1,0 +1,91 @@
+body {
+  font-size: larger;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background: #d6cccc;
+  margin: 0;
+  padding: 20px;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.class-buttons {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.class-buttons button {
+  padding: 10px 20px;
+  margin: 0 10px 15px 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #0070e8bd;
+  color: white;
+  font-weight: bold;
+}
+.class-buttons button.active {
+  background-color: #00376e;
+}
+.table-container {
+  max-height: 500px;
+  overflow-y: auto;
+  border: 1px solid #bbbbbb;
+  background: #fff;
+  margin-bottom: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+th {
+  background-color: #333;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.present {
+  background-color: #48d294;
+}
+.absent {
+  background-color: #bd7379;
+}
+.summary,
+.absent-rolls {
+  margin-top: 20px;
+}
+.btn {
+  padding: 5px 10px;
+  margin: 5px 5px 5px 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+.btn-present {
+  background-color: #28a745;
+  color: white;
+}
+.btn-absent {
+  background-color: #ff0019;
+  color: white;
+}
+.btn-reset {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  display: block;
+  margin: 20px auto;
+  font-weight: bold;
+}
+.action-buttons {
+  margin-bottom: 15px;
+  text-align: center;
+}

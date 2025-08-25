@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME-PAGE</title>
+
+    <!-- Link to Google Fonts (Poppins font) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url('https://imgs.search.brave.com/lyg_sT7uOaOyhh4hdWFvnoKMBd5oBGIFvlNiOwQMDRw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9oaW5kdS1iYWNr/Z3JvdW5kLWluZGlh/bi1iYWNrZ3JvdW5k/LXRoZW1lXzEyNzk1/MDgtMjM0MjkuanBn/P3NlbXQ9YWlzX2h5/YnJpZA');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            color: #173353;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+            height: 325%;
+            width: 100%;
+            z-index: -1;
+        }
+
+        header {
+            background-color: #361902bf;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            transition: transform 1s ease-in-out;
+        }
+        header h1 {
+            margin: 0;
+            background: linear-gradient(90deg, orange, white, green);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            opacity: 0;
+            transform: translateX(-100%);
+            animation: slideIn 2s forwards;
+            font-size: 3rem; /* Adjust font size */
+            text-align: center; /* Center the text */
+            font-weight: bold; /* Make the text bold */
+        }
+
+        /* Keyframe for sliding in */
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Keyframe for shake animation */
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-10px);
+            }
+
+            50% {
+                transform: translateX(10px);
+            }
+
+            75% {
+                transform: translateX(-10px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        h1:hover {
+            transform: rotate(360deg) scale(1.2);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            background-color: #cdb4db;
+            color: black;
+        }
+
+        .sidebar {
+            width: 50px;
+            background: linear-gradient(#4E6980, #F6F7EB);
+            color: white;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transition: all 0.3s ease;
+            box-shadow: 2px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar:hover {
+            width: 220px;
+        }
+
+        .sidebar .sidebar-header {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar .sidebar-header:hover {
+            transform: scale(1.2);
+            color: #e9d8a6;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, pointer-events 0s 0.3s;
+        }
+
+        .sidebar:hover ul {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .sidebar button {
+            background-color: #005f73;
+            border: none;
+            color: white;
+            padding: 12px 18px;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .sidebar button:hover {
+            background-color: #e9d8a6;
+            transform: translateX(5px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .main-content {
+            margin-left: 240px;
+            padding: 20px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: 200px;
+            border-radius: 40%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+            opacity: 1;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        footer {
+            background-color: #ae2012;
+            color: white;
+            text-align: center;
+            margin-top: 10px auto;
+        }
+
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                box-shadow: none;
+            }
+
+            .sidebar ul {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Incredible India</h1>
+        <h3>Discover the diversity, beauty, and rich heritage of India!</h3>
+    </header>
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <span>...</span>
+        </div>
+        <ul>
+            <li><button><a href="home.html">Home</a></button></li>
+            <li><button><a href="culture.html">Culture</a></button></li>
+            <li><button><a href="landmark.html">Landmark</a></button></li>
+            <li><button><a href="cuisine.html">Cuisine</a></button></li>
+            <li><button><a href="contactus.html">Contact Us</a></button></li>
+        </ul>
+    </div>
+
+    <div class="main-content container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2 style="color: #fc0808d8;"><b><u>About India</u></b></h2>
+                <p>
+                    India is a land of incredible diversity. From the snow-capped peaks of the Himalayas to the serene
+                    backwaters of Kerala, every corner of India tells a unique story. India is the second-most populous
+                    country in the world and boasts a history spanning thousands of years. Its rich traditions have left
+                    an indelible mark on the world.
+                </p>
+
+                <img src="./images/india_map.jpg" alt="Map of India" />
+
+                <p>India: A land of cultural and geographical diversity</p>
+
+                <p><q>Unity in diversity is not just a slogan in India but a way of life.</q></p>
+
+                <p>Highlights of India include:</p>
+
+                <ul>
+                    <li><b style="color: #724e0b;">Architecture:</b> Majestic monuments like the Taj Mahal and Red Fort.
+                    </li>
+                    <li><b style="color: #724e0b;">Cuisine:</b> Diverse flavors from spicy curries to sweet desserts.
+                    </li>
+                    <li><b style="color: #724e0b;">Culture:</b> Vibrant festivals, classical dances, and colorful
+                        attire.</li>
+                </ul>
+
+                <h2 style="color: #fc0808d8;"><b><u>Landmarks</u></b></h2>
+
+                <p>
+                    India is home to <u style="color: yellowgreen;">29 UNESCO World Heritage Sites</u>, making it a
+                    paradise for history and architecture enthusiasts.
+                </p>
+
+                <ol type="1">
+                    <li>
+                        <img src="./images/tajmahal.jpg" alt="Taj Mahal" /><br />The Taj Mahal, a symbol of eternal love
+                    </li>
+                    <li>
+                        <img src="./images/qutubminar.jpg" alt="Qutub Minar" /><br />The Qutub Minar, an architectural
+                        marvel in Delhi
+                    </li>
+                </ol>
+
+                <p>
+                    Don't miss exploring the intricate carvings, towering minarets, and breathtaking landscapes!
+                </p>
+
+                <h2 style="color: #fc0808d8;"><u>Indian Culture</u></h2>
+
+                <p>
+                    India's <strong style="color: yellowgreen;"><u>cultural heritage</u></strong> is a blend of various
+                    traditions, languages, and religions. Each region has its unique identity and traditions that are
+                    celebrated through festivals and daily life. Here are some highlights:
+                </p>
+
+                <ul>
+                    <li>Classical Dances: Bharatanatyam, Kathak, and Odissi.</li>
+                    <li>Music: Traditional instruments like the sitar, tabla, and veena.</li>
+                    <li>Festivals: Diwali, Holi, Eid, and Christmas bring people together in celebration.</li>
+                    <li>
+                        <img src="./images/dance.jpg" alt="Indian Classical Dance" />
+                        A glimpse of Indian Classical Dance
+                    </li>
+                </ul>
+
+                <h2 style="color: #fc0808d8;"><u>Delicious Indian Cuisine</u></h2>
+
+                <p>
+                    Indian food is as diverse as its culture. From the fiery curries of the south to the hearty bread of
+                    the north, there's something for everyone. Popular dishes include:
+                </p>
+
+                <ul>
+                    <li><b style="color: #724e0b;">North Indian:</b> Butter chicken, naan, and paneer tikka.</li>
+                    <li><b style="color: #724e0b;">South Indian:</b> Dosa, idli, and sambhar.</li>
+                    <li><b style="color: #724e0b;">Street Food:</b> Pani puri, chaat, and vada pav.</li>
+                    <li>
+                        <img src="./images/biryani.jpg" alt="Hyderabadi Biryani" />
+                        Delicious Hyderabadi Biryani
+                    </li>
+                    <li>
+                        <img src="./images/food image.jpg" alt="Indian Street Food" style="width: 25%;" />
+                        Colorful and flavorful Indian street food
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Incredible India Project. All rights reserved.
+        <p>
+            Contact us at
+            <a href="mailto:info@incredibleindia.com">info@incredibleindia.com</a>
+        </p>
+        <p>
+            Follow us on:
+            <a href="https://www.facebook.com/">Facebook</a> |
+            <a href="https://x.com/?lang=en-in&mx=2" target="_blank">Twitter</a>
+        </p>
+    </footer>
+
+</body>
+
+</html>

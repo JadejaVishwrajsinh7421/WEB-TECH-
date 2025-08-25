@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // q1
+      // write a program marks of studentss in obj
+      marks ={
+          harry:56,
+          rohaan:89,
+          monika:45,
+          shivam:78,
+          anjali:90
+      }
+
+      for(i=0;i<Object.keys(marks).length;i++){
+          console.log("the marks of"+Object.keys(marks)[i]+"are"+marks[Object.keys(marks)[i]])
+      }
+
+      // q2  in for in loop
+
+      for(i in marks){
+          console.log(i)
+      }
+
+      // q3
+      mean = (a,b,c,d) =>{
+        return(a+b+c+d)/4
+      }
+
+      console.log(mean(4,5,6,23))
+    </script>
+  </body>
+</html>
