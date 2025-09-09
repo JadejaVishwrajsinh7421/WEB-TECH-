@@ -7,29 +7,32 @@
   </head>
   <body>
     <script>
-        // Function Declaration
-        function greet(name) {
-            return `Hello, ${name}!`;
-        }
-    
-        // Function Expression
-        const add = function (a, b) {
-            return a + b;
-        };
-    
-        // Arrow Function
-        const multiply = (x, y) => x * y;
-    
-        // Using the functions
-        console.log(greet("Alice")); // Hello, Alice!
-        console.log(add(5, 3));       // 8
-        console.log(multiply(4, 7));  // 28
-    
-        // Function with default parameters
-        function greetUser(name = "Guest") {
-            return `Welcome, ${name}!`;
-        }
-    
+      // Function Declaration
+      function greet(name) {
+        return `Hello, ${name}!`;
+      }
+
+      // Function Expression
+      const add = function (a, b) {
+        return a + b;
+      };
+
+      // Arrow Function
+      const multiply = (x, y) => x * y;
+
+      // Using the functions
+      console.log(greet("Alice")); // Hello, Alice!
+      console.log(add(5, 3)); // 8
+      console.log(multiply(4, 7)); // 28
+
+      // Function with default parameters
+      function greetUser(name = "Guest") {
+        return `Welcome, ${name}!`;
+      }
+      //anyomus funtion without name
+      setTimeout(function () {
+        console.log("This runs after 2 seconds");
+      }, 2000);
     </script>
   </body>
 </html>

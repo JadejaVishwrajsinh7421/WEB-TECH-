@@ -1,0 +1,142 @@
+📌 Mapping PPT Topics → CodeWithHarry Videos
+1. Introduction, Client-side scripting, Pros/Cons
+
+🎥 01IntroductiontoJs
+
+🎥 23Jsbrowser (extra context about browser JS)
+
+2. <script> Tag (internal/external JS)
+
+🎥 24scripttag
+
+🎥 27alertpromptconfirm (for popup basics)
+
+🎥 26Exercise1Solution (optional practice)
+
+3. Variables & Data Types
+
+🎥 02Variables
+
+🎥 03varletconst
+
+🎥 04primitivesobjects
+
+4. Operators & Conditions
+
+🎥 06Operators
+
+🎥 07Conditionals
+
+5. Loops (for, while)
+
+🎥 09forloops
+
+🎥 10whileloops
+
+🎥 19ArrayLoops (array looping)
+
+6. Functions
+
+🎥 11functions
+
+🎥 91arrowfunctionsrevisited (aligns with ES6 arrow functions)
+
+7. Strings
+
+🎥 13Strings
+
+🎥 14StringMethods
+
+8. Arrays
+
+🎥 16Arrays
+
+🎥 17Arraymethods1
+
+🎥 18Arraymethods2
+
+🎥 20mapfilterreduce (important ES6 part)
+
+9. Popup Boxes (alert, confirm, prompt)
+
+🎥 27alertpromptconfirm
+
+10. Objects
+
+🎥 74IntrotoOOPs
+
+🎥 76classesandobjects
+
+🎥 77Constructors
+
+🎥 78Inheritance (basic idea only, don’t go too deep if not in syllabus)
+
+11. DOM (Document Object Model)
+
+🎥 28windowBOMDOM
+
+🎥 31WalkingtheDOM
+
+🎥 32Children
+
+🎥 33SiblingsAndParents
+
+🎥 36SearchingtheDOM
+
+🎥 41innerHTML
+
+🎥 42attributemethods
+
+🎥 43InsertionMethods
+
+12. DHTML (Dynamic HTML)
+
+🎥 45classnameclasslist (changing classes/styles)
+
+🎥 46settimeout (basic animation/timer)
+
+🎥 47Events
+
+🎥 48addEventListener
+
+13. Validation & RegExp
+
+🎥 52callbacks (skip async, just callback idea)
+
+🎥 66FetchAPI (skip, not in syllabus)
+⚠️ Better: You can learn RegExp separately (not fully covered in Harry’s playlist). Use PPT examples directly.
+
+14. ES6 Features
+
+🎥 03varletconst (already covered)
+
+🎥 91arrowfunctionsrevisited
+
+🎥 87destructuring
+
+🎥 75ArrayPrototype
+
+🎥 20mapfilterreduce (again for ES6 array methods)
+
+✅ Final Learning Order (Cleaned Path)
+
+Intro + Script tag
+
+Variables & Operators
+
+Conditions + Loops
+
+Functions + Strings
+
+Arrays + Methods
+
+Popup boxes
+
+Objects + Classes (basic OOP)
+
+DOM + DHTML
+
+
+Validation + RegExp (from PPT directly)
+
+ES6 (arrow functions, destructuring, array methods)

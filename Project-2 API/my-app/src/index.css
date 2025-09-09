@@ -1,0 +1,49 @@
+/* Background for whole app */
+body {
+  background-color: #121212 !important;
+  color: white;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Navbar custom */
+.navbar {
+  background-color: #000 !important;
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #f5c518 !important; /* IMDb yellow on hover */
+}
+
+/* Search input */
+.form-control {
+  border-radius: 4px;
+}
+
+/* IMDb Yellow button */
+.btn-warning {
+  font-weight: bold;
+  background-color: #f5c518;
+  border: none;
+  color: black;
+}
+
+.btn-warning:hover {
+  background-color: #e4b50c;
+}
+
+/* Movie card hover effect */
+.card {
+  border: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}

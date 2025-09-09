@@ -1,0 +1,164 @@
+import React, { useEffect, useState } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+// TMDb API (replace with your API key)
+const API_KEY = "YOUR_TMDB_API_KEY";
+const BASE_URL = "https://api.themoviedb.org/3";
+const IMAGE_URL = "https://image.tmdb.org/t/p/w500";
+s// Reusable Movie Card
+<style>
+    body {
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: #111;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  background: #f5c518;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-right: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.search {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 20px;
+}
+
+.nav-links a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: white;
+}
+
+.category {
+  margin: 20px;
+}
+
+.category h3 {
+  color: #f5c518;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.movie-card {
+  background: #222;
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+</style>
+function MovieCard({ movie }) {
+  return (
+    <div className="movie-card">
+      <img
+        src={
+          movie.poster_path
+            ? `${IMAGE_URL}${movie.poster_path}`
+            : "https://via.placeholder.com/200x300?text=No+Image"
+        }
+        alt={movie.title}
+      />
+      <p>{movie.title}</p>
+    </div>
+  );
+}
+
+// Category Section
+function Category({ title, endpoint }) {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    fetch(`${BASE_URL}${endpoint}?api_key=${API_KEY}`)
+      .then((res) => res.json())
+      .then((data) => setMovies(data.results || []))
+      .catch((err) => console.error(err));
+  }, [endpoint]);
+
+  return (
+    <div className="category">
+      <h3>{title} &gt;</h3>
+      <div className="movie-grid">
+        {movies.slice(0, 12).map((m) => (
+          <MovieCard key={m.id} movie={m} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// Layout
+function Layout() {
+  return (
+    <>
+      <nav className="navbar">
+        <Link className="logo" to="/">IMDb</Link>
+        <input className="search" type="text" placeholder="Search" />
+        <div className="nav-links">
+          <Link to="/">Home</Link>
+          <Link to="/browse">Browse</Link>
+        </div>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/browse" element={<Browse />} />
+      </Routes>
+    </>
+  );
+}
+
+// Home Page
+function Home() {
+  return (
+    <div className="home">
+      <Category title="Popular Movies" endpoint="/movie/popular" />
+      <Category title="Top Rated" endpoint="/movie/top_rated" />
+      <Category title="Upcoming" endpoint="/movie/upcoming" />
+    </div>
+  );
+}
+
+// Browse Page
+function Browse() {
+  return (
+    <div className="browse">
+      <Category title="Action" endpoint="/discover/movie?with_genres=28" />
+      <Category title="Adventure" endpoint="/discover/movie?with_genres=12" />
+      <Category title="Animation" endpoint="/discover/movie?with_genres=16" />
+      <Category title="Comedy" endpoint="/discover/movie?with_genres=35" />
+    </div>
+  );
+}
+
+// Mount App
+createRoot(document.getElementById("root")).render(
+  <BrowserRouter>
+    <Layout />
+  </BrowserRouter>
+);
